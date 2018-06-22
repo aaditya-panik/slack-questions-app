@@ -34,6 +34,7 @@ def create(post_data):
                  question_type=question_type)
     try:
         obj = q.save()
+        log.debug("## Question Added: ID {}".format(obj.question_id))
         return_dict = obj.to_dict()
         return return_dict
     except Exception as e:
