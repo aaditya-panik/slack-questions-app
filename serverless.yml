@@ -54,3 +54,10 @@ functions:
       - http:
           path: question/{id}
           method: post
+
+  delete:
+    handler: api/question/delete.main
+    events:
+      - http:
+          path: question/{id}
+          method: delete
