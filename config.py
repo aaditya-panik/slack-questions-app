@@ -1,5 +1,5 @@
 import os
-
+MAX_NUMBER_OF_DIFFICULTY = 3
 SLACK_WEB_HOOK_URL = "https://hooks.slack.com/services/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"
 DATABASE = {
     "mongodb": {
