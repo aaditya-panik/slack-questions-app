@@ -47,3 +47,10 @@ functions:
       - http:
           path: question
           method: get
+
+  update:
+    handler: api/question/update.main
+    events:
+      - http:
+          path: question/{id}
+          method: post
