@@ -1,0 +1,22 @@
+{
+  "name": "sde-questions-api",
+  "version": "1.0.0",
+  "description": "An API for questions to publish on the #qotw Slack group",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/aadityarajeev/sde-questions-api.git"
+  },
+  "author": "Aaditya Panikath",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/aadityarajeev/sde-questions-api/issues"
+  },
+  "homepage": "https://gitlab.com/aadityarajeev/sde-questions-api#README",
+  "dependencies": {
+    "serverless-python-requirements": "^4.1.0"
+  }
+}
