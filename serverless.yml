@@ -33,3 +33,10 @@ functions:
       - http:
           path: question
           method: post
+
+  get:
+    handler: api/question/get.main
+    events:
+      - http:
+          path: question/{id}
+          method: get
