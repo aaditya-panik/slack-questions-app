@@ -40,3 +40,10 @@ functions:
       - http:
           path: question/{id}
           method: get
+
+  list:
+    handler: api/question/list.main
+    events:
+      - http:
+          path: question
+          method: get
