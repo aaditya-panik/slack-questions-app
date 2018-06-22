@@ -18,8 +18,10 @@ def main(event, context):
 
 def delete(q_id):
     question = Question.objects(question_id=q_id).first()
+    q_id = question.question_id
     if question:
         question.delete()
+        log.debug("## Question Deleted : ID {}".format(q_id))
         return True, None
     else:
         return False, "Question not found"

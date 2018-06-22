@@ -9,7 +9,6 @@ package:
 
 custom:
   stage: ${opt:stage, self:provider.stage}
-  lambda-schedule: cron(0/2 * * * ? *)
   pythonRequirements:
     dockerizePip: true
 
@@ -61,3 +60,8 @@ functions:
       - http:
           path: question/{id}
           method: delete
+
+  random:
+    handler: api/question/randomq.main
+    events:
+      - schedule: cron(0 17 * * ? *)
