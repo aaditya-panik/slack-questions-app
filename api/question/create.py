@@ -38,8 +38,8 @@ def create(post_data):
         return_dict = obj.to_dict()
         return return_dict
     except Exception as e:
-        return response.failure({"status": "Failure occurred.",
-                                 "error": str(e)})
+        log.error(e)
+        return response.failure({"status": "Failure occurred."})
 
 
 def validate(post_data):

@@ -18,6 +18,13 @@ provider:
   stage: dev
   region: us-west-2
 
+  environment:
+    MONGODB_USER: ${ssm:mongodb_user}
+    MONGODB_PASSWORD: ${ssm:mongodb_password~true}
+    MONGODB_CONN_STRING: ${ssm:connection_string}
+    SLACK_WEBHOOK_URL: ${ssm:slack_webhook_url}
+    BUFFER_DURATION: ${ssm:buffer_duration}
+
 functions:
   hello:
     handler: handler.hello
@@ -65,3 +72,6 @@ functions:
     handler: api/question/randomq.main
     events:
       - schedule: cron(0 17 * * ? *)
+      - http:
+          path: random
+          method: get
