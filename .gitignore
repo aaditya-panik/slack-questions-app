@@ -21,3 +21,6 @@ __pycache__/
 .serverless
 package-lock.json
 node_modules/
+
+# Direnv files
+.envrc
