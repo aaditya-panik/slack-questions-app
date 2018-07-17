@@ -45,8 +45,8 @@ def collect_questions():
 
 def frame_message(questions):
     message_dict = {}
-    current_date = datetime.date.today().__str__()
-    message_dict["text"] = "Some more food for the brains :zombie-gif:. Here are the Questions of the Week for *{}*!"\
+    current_date = datetime.date.today().strftime('%m-%d-%Y')
+    message_dict["text"] = "Questions for week : *{}*\nSome more food for the brains :zombie-gif:."\
         .format(current_date)
     message_dict["attachments"] = []
     for index, question in enumerate(questions):
