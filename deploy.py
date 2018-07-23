@@ -1,25 +1,27 @@
 from ssmparameters import SSM_PARAMETERS
-
-import os
+from subprocess import DEVNULL
+import subprocess
 import logging
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-SSM_COMMAND = "aws ssm put-parameter --name {} --type {} --value {}"
 SERVERLESS_COMMAND = "serverless deploy"
 
 
 def main():
     for ssm_parameter in SSM_PARAMETERS:
         if ssm_parameter.get("value"):
-            os.system(SSM_COMMAND.format(ssm_parameter.get("name"),
-                                         ssm_parameter.get("type"),
-                                         ssm_parameter.get("value")))
+            subprocess.check_call(["aws", "ssm", "put-parameter",
+                                   "--name", ssm_parameter.get("name"),
+                                   "--type", ssm_parameter.get("type"),
+                                   "--value", ssm_parameter.get("value")], stdout=DEVNULL)
             logger.info("Added {} to SSM".format(ssm_parameter.get("name")))
         else:
             logger.error("Missing SSM Parameters")
             return
+    logger.info("Installing Node Packages")
+    subprocess.check_call(["npm", "install"])
 
 
 if __name__ == '__main__':
