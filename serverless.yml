@@ -23,7 +23,7 @@ provider:
     MONGODB_PASSWORD: ${ssm:mongodb_password~true}
     MONGODB_CONN_STRING: ${ssm:connection_string}
     SLACK_WEBHOOK_URL: ${ssm:slack_webhook_url}
-    BUFFER_DURATION: ${ssm:buffer_duration}
+    COOLDOWN_DURATION: ${ssm:cooldown_duration}
 
 functions:
   hello:

@@ -6,7 +6,7 @@ DIFFICULTY_MAP = {
     "3": {"name": "Hard", "color": "#c43161"}
 }
 MAX_NUMBER_OF_DIFFICULTY = len(DIFFICULTY_MAP)
-BUFFER_DURATION = int(os.environ.get("BUFFER_DURATION", 30))
+COOLDOWN_DURATION = int(os.environ.get("COOLDOWN_DURATION", 30))
 
 SLACK_WEBHOOK_URL = "https://hooks.slack.com/services" + os.environ.get("SLACK_WEBHOOK_URL", "/")
 

@@ -1,30 +1,30 @@
 SSM_PARAMETERS = [
     {
-        "name": "1mongodb_user",
+        "name": "mongodb_user",
         "type": "String",
         # TODO
         "value": None
     },
     {
-        "name": "1mongodb_password",
+        "name": "mongodb_password",
         "type": "SecureString",
         # TODO
         "value": None
     },
     {
-        "name": "1connection_string",
+        "name": "connection_string",
         "type": "String",
         # TODO
         "value": None
     },
     {
-        "name": "1slack_webhook_url",
+        "name": "slack_webhook_url",
         "type": "String",
         # TODO
         "value": None
     },
     {
-        "name": "1buffer_duration",
+        "name": "cooldown_duration",
         "type": "String",
         # TODO
         "value": None

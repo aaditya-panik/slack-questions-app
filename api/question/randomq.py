@@ -5,7 +5,7 @@ import lib.response as response
 
 from models.question import Question
 from mongoengine.queryset.visitor import Q
-from config import MAX_NUMBER_OF_DIFFICULTY, DIFFICULTY_MAP, SLACK_WEBHOOK_URL, BUFFER_DURATION
+from config import MAX_NUMBER_OF_DIFFICULTY, DIFFICULTY_MAP, SLACK_WEBHOOK_URL, COOLDOWN_DURATION
 
 log = logging.getLogger()
 log.setLevel(logging.DEBUG)
@@ -32,7 +32,7 @@ def main(event, context):
 
 def collect_questions():
     questions = []
-    older_than = datetime.datetime.utcnow() - datetime.timedelta(days=BUFFER_DURATION)
+    older_than = datetime.datetime.utcnow() - datetime.timedelta(days=COOLDOWN_DURATION)
     for qt_id in range(1, MAX_NUMBER_OF_DIFFICULTY + 1):
         question = Question.objects(
             Q(question_type=qt_id) &
