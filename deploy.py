@@ -6,8 +6,6 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-SERVERLESS_COMMAND = "serverless deploy"
-
 
 def main():
     for ssm_parameter in SSM_PARAMETERS:
@@ -22,6 +20,7 @@ def main():
             return
     logger.info("Installing Node Packages")
     subprocess.check_call(["npm", "install"])
+    subprocess.check_call(["sls", "deploy", "-v"])
 
 
 if __name__ == '__main__':

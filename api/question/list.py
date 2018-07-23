@@ -10,10 +10,6 @@ log.setLevel(logging.DEBUG)
 
 
 def main(event, context):
-    log.debug(os.environ.get("MONGODB_USER"))
-    log.debug(os.environ.get("MONGODB_PASSWORD"))
-    log.debug(os.environ.get("MONGODB_CONN_STRING"))
-    log.debug(SLACK_WEBHOOK_URL)
     return response.success(list_questions())
 
 
