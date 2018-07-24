@@ -57,6 +57,7 @@ Before installing, we need the following:
 
 - A **Node** environment for `serverless`.
 - A **Python3** environment for deploying the code and debugging.
+- A **Docker** Daemon running for packaging the python packages into a custom docker image.
 - AWS CLI with programmatic Access Keys configured.
 
 To run the installation script run:
